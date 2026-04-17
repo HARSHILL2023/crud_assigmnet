@@ -17,6 +17,8 @@ router.put("/:id", notesRoutes.updateNote)
 
 router.patch("/:id", notesRoutes.patchNote)
 
+router.delete("/bulk", notesRoutes.deleteMany)
+
 router.delete("/:id", notesRoutes.deleteNote)
 
 module.exports=router

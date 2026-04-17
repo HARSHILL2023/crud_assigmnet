@@ -99,4 +99,15 @@ async function deleteNote(req, res) {
 
     res.json(deleted);
 }
-module.exports = { putNotes , Manynote , getAllnotes , getByid ,updateNote ,patchNote,deleteNote}
+
+async function deleteMany(req, res) {
+    const ids = req.body.ids;
+
+    const result = await notesmodel.deleteMany({
+        _id: { $in: ids }
+    });
+
+    res.json(result);
+}
+
+module.exports = { putNotes , Manynote , getAllnotes , getByid ,updateNote ,patchNote,deleteNote,deleteMany}
