@@ -84,4 +84,12 @@ async function updateNote(req, res) {
     res.json(updated);
 }
 
-module.exports = { putNotes , Manynote , getAllnotes , getByid ,updateNote }
+async function patchNote(req, res) {
+    const id = req.params.id;
+
+    const updated = await notesmodel.findByIdAndUpdate(id, req.body);
+
+    res.json(updated);
+}
+
+module.exports = { putNotes , Manynote , getAllnotes , getByid ,updateNote ,patchNote}
