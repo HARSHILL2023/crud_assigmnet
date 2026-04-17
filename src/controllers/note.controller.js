@@ -92,4 +92,11 @@ async function patchNote(req, res) {
     res.json(updated);
 }
 
-module.exports = { putNotes , Manynote , getAllnotes , getByid ,updateNote ,patchNote}
+async function deleteNote(req, res) {
+    const id = req.params.id;
+
+    const deleted = await notesmodel.findByIdAndDelete(id);
+
+    res.json(deleted);
+}
+module.exports = { putNotes , Manynote , getAllnotes , getByid ,updateNote ,patchNote,deleteNote}
