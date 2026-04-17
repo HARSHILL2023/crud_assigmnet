@@ -10,4 +10,6 @@ app.get("/",(req,res)=>{
 
 app.use("/api/notes",notesroutes)
 
+
+
 module.exports=app

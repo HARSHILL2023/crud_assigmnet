@@ -7,7 +7,7 @@ const router= express.Router();
 
 router.post("/",notesRoutes.putNotes)
 
-router.post("/",notesRoutes.Manynote)
+router.post("/bulk",notesRoutes.Manynote)
 
 
 
