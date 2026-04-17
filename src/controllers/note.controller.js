@@ -1,3 +1,4 @@
+const noteModel = require("../models/notes.models");
 const notesmodel = require("../models/notes.models")
 
 async function putNotes(req, res) {
@@ -57,4 +58,21 @@ async function getAllnotes(re,res) {
     });
     
 }
-module.exports = { putNotes , Manynote , getAllnotes }
+
+async function getByid(req, res) {
+    const idd = req.params.id
+
+    const out = await noteModel.findById(idd);
+
+    if (out) {
+        return res.status(200).json({
+            message: "found user",
+            data: out
+        })
+    }
+
+    res.status(404).json({
+        message: "user not found kindly enter valid id"
+    })
+}
+module.exports = { putNotes , Manynote , getAllnotes , getByid }

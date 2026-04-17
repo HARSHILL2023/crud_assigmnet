@@ -11,6 +11,7 @@ router.post("/bulk",notesRoutes.Manynote)
 
 router.get("/",notesRoutes.getAllnotes)
 
+router.get("/:id",notesRoutes.getByid)
 
 
 module.exports=router
