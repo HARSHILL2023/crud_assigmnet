@@ -13,5 +13,6 @@ router.get("/",notesRoutes.getAllnotes)
 
 router.get("/:id",notesRoutes.getByid)
 
+router.put("/:id", notesRoutes.updateNote)
 
 module.exports=router

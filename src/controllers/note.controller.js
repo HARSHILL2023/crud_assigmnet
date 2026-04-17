@@ -75,4 +75,13 @@ async function getByid(req, res) {
         message: "user not found kindly enter valid id"
     })
 }
-module.exports = { putNotes , Manynote , getAllnotes , getByid }
+
+async function updateNote(req, res) {
+    const id = req.params.id;
+
+    const updated = await notesmodel.findByIdAndUpdate(id, req.body);
+
+    res.json(updated);
+}
+
+module.exports = { putNotes , Manynote , getAllnotes , getByid ,updateNote }
