@@ -9,7 +9,7 @@ router.post("/",notesRoutes.putNotes)
 
 router.post("/bulk",notesRoutes.Manynote)
 
-
+router.get("/",notesRoutes.getAllnotes)
 
 
 

@@ -47,4 +47,14 @@ async function Manynote(req,res) {
         res.status(500).json({ message: "error" })
     }
 }
-module.exports = { putNotes , Manynote }
+
+async function getAllnotes(re,res) {
+
+    const allnotes=  await notesmodel.find();
+
+    res.status(200).json({
+        "data":allnotes
+    });
+    
+}
+module.exports = { putNotes , Manynote , getAllnotes }
