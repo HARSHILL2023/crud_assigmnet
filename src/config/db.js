@@ -7,7 +7,7 @@ async function connectDB() {
         
     }
     catch(err){
-        console.log(errr)
+        console.log(err)
     }
     
 }
